@@ -1,0 +1,131 @@
+html, body {
+	height: 100%;
+}
+
+nav {
+	margin-top: 50px;
+	margin-right: 100px;
+	margin-left: 100px;
+	text-align: right;
+}
+
+hr {
+	border: 0;
+	border-top: 1px solid #886600;
+	border-bottom: 1px solid #EBC392;
+}
+
+.bg-brown {
+	background-color:#E4C392;
+}
+
+.align-center {
+	text-align: center;
+}
+
+
+#index-logo {
+	padding: 20px;
+	width: 300px;
+	height: 300px;
+}
+
+.nav-text-light {
+	color: #FFFFFF;
+	text-decoration: none;
+	font-size: 16px;
+	letter-spacing: 4px;
+	font-family: thin;
+}
+.nav-text-light:hover {
+	color:#000000;
+	text-decoration: none;
+}
+.nav-bar-light{
+	color:#886600;
+}
+
+
+
+
+
+
+#map {
+	height: 100%;
+}
+
+#floating-panel {
+	position: absolute;
+	top: 50px;
+	left: 3%;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+
+
+/* 頁面上方超連結樣式 背景白底色 */
+a.a2 {color: #C1A685;text-decoration: none;font-size: 16px;letter-spacing: 4px;font-family: thin;}
+a.a2:hover {color:#000000;}   /* 設定滑鼠游標指在連結位置上的樣式 */
+a.a2:active {color:#C1A685;}  /* 設定上點擊過的連結樣式 */
+
+/*p3的展覽名稱與展覽清單字體*/
+.p3{color: #9C856E;font-size: 16px;letter-spacing: 4px;font-family: thin;}
+.p3name{color: black;font-size: 16px;letter-spacing: 4px;font: thin;}
+
+/*p5的字體*/
+.p5{color: #8C735E;font-size: 17px;letter-spacing: 4px;font: thin;}
+
+/*水平線樣式*/
+.h1{
+	width: 80%;border : 0;height: 1px;
+ 	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)); }
+.h2{border: 0;border-bottom: 1px solid #C1A685;}
+
+/**/
+textarea{
+	width: 500px;
+	height: 200px;
+
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	border: 1px solid #999;
+}
+/*p5*/
+.game{
+	width: 100px;
+	height: 40px;
+	background-color: #BEA274;
+	text-align: center;
+	letter-spacing: 4px;
+	color: white;
+	border-radius: 4px;
+	border: none;
+	transition: all 0.5s;
+	cursor: pointer;
+	padding: 10px;
+}
+.game span{
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+.game span:after{
+	content: '+';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -10px;
+	transition: 0.5s;
+}
+.game span:hover{
+	padding-right: 15px;
+}
+.game:hover span:after{
+	opacity: 1;
+	right: 0;
+}
