@@ -6,5 +6,5 @@
 	<a href="" class="nav-text-light">聯絡我們</a>
 	<font class="nav-bar-light">|</font>
 	<a href="" class="nav-text-light">登出</a>
-	<hr>
+	<hr class="light">
 </nav>

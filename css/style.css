@@ -2,19 +2,6 @@ html, body {
 	height: 100%;
 }
 
-nav {
-	margin-top: 50px;
-	margin-right: 100px;
-	margin-left: 100px;
-	text-align: right;
-}
-
-hr {
-	border: 0;
-	border-top: 1px solid #886600;
-	border-bottom: 1px solid #EBC392;
-}
-
 .bg-brown {
 	background-color:#E4C392;
 }
@@ -30,6 +17,16 @@ hr {
 	height: 300px;
 }
 
+
+/*nav*/
+nav {
+	margin-top: 50px;
+	margin-right: 100px;
+	margin-left: 100px;
+	text-align: right;
+}
+
+/*nav light*/
 .nav-text-light {
 	color: #FFFFFF;
 	text-decoration: none;
@@ -44,6 +41,32 @@ hr {
 .nav-bar-light{
 	color:#886600;
 }
+hr .light{
+	border: 0;
+	border-top: 1px solid #886600;
+	border-bottom: 1px solid #EBC392;
+}
+
+/*nav dark*/
+.nav-text-dark {
+	color: #C1A685;
+	text-decoration: none;
+	font-size: 16px;
+	letter-spacing: 4px;
+	font-family: thin;
+}
+.nav-text-dark:hover {
+	color:#000000;
+}
+.nav-bar-dark{
+	color:#886600;
+}
+.dark{
+	border: 0;
+	height: 1px;
+ 	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
 
 
 
@@ -60,16 +83,7 @@ hr {
 	left: 3%;
 }
 
-.navbar {
-  margin-bottom: 20px;
-}
 
-
-
-/* 頁面上方超連結樣式 背景白底色 */
-a.a2 {color: #C1A685;text-decoration: none;font-size: 16px;letter-spacing: 4px;font-family: thin;}
-a.a2:hover {color:#000000;}   /* 設定滑鼠游標指在連結位置上的樣式 */
-a.a2:active {color:#C1A685;}  /* 設定上點擊過的連結樣式 */
 
 /*p3的展覽名稱與展覽清單字體*/
 .p3{color: #9C856E;font-size: 16px;letter-spacing: 4px;font-family: thin;}
