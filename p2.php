@@ -1,3 +1,15 @@
+<?php
+    include("db.php");
+    session_start();
+    if(!isset($_SESSION['mid']))
+    {
+        header('location:index.php');
+    }
+    else if(isset($_GET['log']) && ($_GET['log']=='out')){
+        session_destroy();
+        header('location:index.php');
+    }
+?>
 <!DOCTYPE html>
 <html>
 	<head>

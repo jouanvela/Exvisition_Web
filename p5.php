@@ -1,10 +1,22 @@
+<?php
+    include("db.php");
+    session_start();
+    if(!isset($_SESSION['mid']))
+    {
+        header('location:index.php');
+    }
+    else if(isset($_GET['log']) && ($_GET['log']=='out')){
+        session_destroy();
+        header('location:index.php');
+    }
+?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
 		<title>Exvisition</title>
 
 		<!-- Bootstrap -->
@@ -16,23 +28,7 @@
 	</style>
 	<body>
 		<div class="container">
-			<div class="row">
-				<br>
-				<div class="col-md-6"></div>
-				<div class="col-md-6 col-xs-12" style="text-align:center;">
-					<br>
-					<!-- 登入後顯示xxx你好 -->
-					<font color="#C1A685" face="thin">xxx你好</font>
-					&nbsp<font color="#886600">|</font>&nbsp
-					<!-- -->
-					<a href="p3.html" class="a2">基本資料</a>&nbsp<font color="#886600">|</font>&nbsp
-					<a href="" class="a2">聯絡我們</a>&nbsp<font color="#886600">|</font>&nbsp
-					<a href="" class="a2">登出</a>
-				</div>
-				<br><br>
-				<hr class="h1">
-			</div>
-
+			<?php include("navdark.php");?>
 			<div class="row">
 				<div class="col-md-3"></div>
 				<div class="col-md-6 col-xs-12">
@@ -205,10 +201,10 @@
 						    </div>
 						  </div>
 						</div>
-					    <br><br> 
+					    <br><br>
 
 				  	</div>
-				  	
+
 				  	<br><br><hr class="h2"><br><br>
 				  	<!-- 送出 -->
 				  	<div style="text-align:center;">
