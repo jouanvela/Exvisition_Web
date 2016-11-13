@@ -32,17 +32,17 @@
 				<div class="col-md-4 col-xs-10">
 					<!-- 上傳展覽 -->
 					<form class="form-horizontal">
-						<div class="form-group">
+						<div class="form-group" style="letter-spacing: 5px">
 							<label for="mName" class="col-sm-4 control-label">
-								<font color="#FFFFFF" face="thin" size="3px">展館名稱</font>
+								<font color="#FFFFFF" face="thin" size="4px">展館名稱</font>
 							</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control" id="mName" name="mName">
 							</div>
 						</div>
-						<div class="form-group">
+						<div class="form-group" style="letter-spacing: 3px">
 							<label for="logo" class="col-sm-4 control-label">
-								<font color="#FFFFFF" face="thin" size="3px">LOGO</font>
+								<font color="#FFFFFF" face="thin" size="4px">LOGO</font>
 							</label>
 							<div class="col-sm-8">
 								<input type="file" id="logo">
