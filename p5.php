@@ -84,18 +84,138 @@
 					  	</div>
 					  	<br><br><hr class="h2"><br><br>
 					  	<!-- 小遊戲 -->
-					  	<div>
-						  	<button class="game" onclick="disp_alert()" style="vertical-align:middle"><span>小遊戲</span></button>
-						    <br><br>
-					  	</div>
-					  	<br><br><hr class="h2"><br><br>
-					  	<!-- 送出 -->
-					  	<div style="text-align:center;">
-					  		<button type="submit" class="btn btn-default">送出</button>
+						<div>
+					  	<button class="game" style="vertical-align:middle" data-toggle="modal" data-target="#myModal" type="button"><span>小遊戲</span></button>
+					  	<!-- Modal -->
+						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						  <div class="modal-dialog">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						        <h4 class="modal-title" id="myModalLabel">選擇遊戲</h4>
+						      </div>
+						      <div class="modal-body">
+								<div class="row">
+									<div class="col-md-2"></div>
+									<div class="col-md-8 col-xs-12">
+										<br>
+										<!-- 選擇遊戲 -->
+										<form>
+										  	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+											  <div class="panel panel-default" style="border:0px white none;">
+											    <div class="panel-heading" role="tab" id="headingTwo" style="background-color: white; border:0px white none; padding: 15px;">
+											      <h4 class="panel-title">
+											        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+											        <!-- 滑塊拼圖 -->
+											          <label for="puz">
+													  	<font class="p6">滑塊拼圖</font>
+												    </label>
+											        </a>
+											      </h4>
+											    </div>
+											    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+											      <div class="panel-body">
+											      <!-- 上傳圖片 -->
+											       	<input type="file" id="puz">
+											      </div>
+											    </div>
+											  </div>
+											  <div class="panel panel-default" style="border:0px white none;">
+											    <div class="panel-heading" role="tab" id="headingThree" style="background-color: white; border-style: none; padding: 15px;">
+											      <h4 class="panel-title">
+											        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+											        <!-- 射擊遊戲 -->
+											        <label for="sht">
+												    	<font class="p6">射擊遊戲</font>
+												    </label>
+											        </a>
+											      </h4>
+											    </div>
+											    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+											      <div class="panel-body">
+											      <!-- 上傳圖片 -->
+											        <input type="file" id="sht">
+											      </div>
+											    </div>
+											  </div>
+											  <div class="panel panel-default" style="border:0px white none;">
+											    <div class="panel-heading" role="tab" id="headingFour" style="background-color: white; border-style: none; padding: 15px;">
+											      <h4 class="panel-title">
+											        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+											        <!-- 接物品 -->
+											        <label for="cah">
+														<font class="p6">接物品</font>
+													</label>
+											        </a>
+											      </h4>
+											    </div>
+											    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+											      <div class="panel-body">
+											      <!-- 上傳圖片 -->
+												       <input type="file" id="cah">
+											      </div>
+											    </div>
+											  </div>
+											  <div class="panel panel-default" style="border:0px white none;">
+											    <div class="panel-heading" role="tab" id="headingFive" style="background-color: white; border-style: none; padding: 15px;">
+											      <h4 class="panel-title">
+											        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+											        <!-- 挖礦 -->
+											        <label for="a">
+														<font class="p6">挖礦</font>
+													</label>
+											        </a>
+											      </h4>
+											    </div>
+											    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+											      <div class="panel-body">
+											      <!-- 上傳圖片 -->
+												       <input type="file" id="a">
+											      </div>
+											    </div>
+											  </div>
+											  <div class="panel panel-default" style="border:0px white none;">
+											    <div class="panel-heading" role="tab" id="headingSix" style="background-color: white; border-style: none; padding: 15px;">
+											      <h4 class="panel-title">
+											        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+											        <!-- 記憶遊戲 -->
+											        <label for="mem">
+														<font class="p6">記憶遊戲</font>
+													</label>
+											        </a>
+											      </h4>
+											    </div>
+											    <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+											      <div class="panel-body">
+											      <!-- 上傳圖片 -->
+											   		   <input type="file" id="mem">
+											      </div>
+											    </div>
+											  </div>
+											</div>
+										  	<br>
+										</form>
+									</div>
+									<div class="col-md-2"></div>
+								</div>
+						      </div>
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-primary">確定</button>
+						      </div>
+						    </div>
+						  </div>
 						</div>
-					</form>
+					    <br><br> 
 
-				</div>
+				  	</div>
+				  	
+				  	<br><br><hr class="h2"><br><br>
+				  	<!-- 送出 -->
+				  	<div style="text-align:center;">
+				  		<button type="submit" class="btn btn-default">送出</button>
+					</div>
+				</form>
+
 				<div class="col-md-3"></div>
 			</div>
 		</div>
