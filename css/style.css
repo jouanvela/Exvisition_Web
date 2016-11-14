@@ -1,67 +1,66 @@
-html, body {
-	height: 100%;
+@font-face {
+  font-family: 'Brandon Grotesque Bold';
+  src: url('../fonts/BRANDON_BLD.OTF') format('OpenType');
 }
 
+html, body {
+	height: 100%;
+	font-family:"Brandon Grotesque Bold", "微軟正黑體", "Microsoft JhengHei";
+}
+.align-center {
+	text-align: center;
+}
 .bg-brown {
 	background-color:#E4C392;
 }
 
-.align-center {
-	text-align: center;
+/***INDEX***/
+.text-light{
+	color: #FFFFFF;
+	font-size: 16px;
+	letter-spacing: 5px;
 }
-
-
 #index-logo {
-	padding: 20px;
+	margin: 50px;
 	width: 255px;
 	height: 245px;
 }
 
 
-/*nav*/
+
+/***NAVBAR***/
 nav {
 	margin-top: 50px;
 	margin-right: 100px;
 	margin-left: 100px;
 	text-align: right;
 }
-
-/*nav light*/
-.nav-text-light {
-	color: #FFFFFF;
+.nav-text-light, .nav-text-dark {
 	text-decoration: none;
 	font-size: 16px;
 	letter-spacing: 4px;
-	font-family: thin;
 }
-.nav-text-light:hover {
+.nav-text-light:hover, .nav-text-dark:hover {
 	color:#000000;
 	text-decoration: none;
 }
-.nav-bar-light{
+.nav-text-light:active, .nav-text-dark:active {
+	text-decoration: none;
+}
+.nav-bar{
 	color:#886600;
 }
-hr .light{
+.nav-text-light, .nav-text-light:active{
+	color: #FFFFFF;
+}
+hr.light{
 	border: 0;
 	border-top: 1px solid #886600;
-	border-bottom: 1px solid #EBC392;
 }
-
-/*nav dark*/
-.nav-text-dark {
+.nav-text-dark, .nav-text-dark:active {
 	color: #C1A685;
-	text-decoration: none;
-	font-size: 16px;
-	letter-spacing: 4px;
-	font-family: thin;
 }
-.nav-text-dark:hover {
-	color:#000000;
-}
-.nav-bar-dark{
-	color:#886600;
-}
-.dark{
+hr.dark{
 	border: 0;
 	height: 1px;
  	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
@@ -73,54 +72,16 @@ hr .light{
 
 
 
-#map {
-	height: 100%;
-}
-
-#floating-panel {
-	position: absolute;
-	top: 50px;
-	left: 3%;
-}
-
-
-
-/* 頁面上方超連結樣式 背景咖啡底色 */
-a.a1 {color: #FFFFFF;text-decoration: none;font-size: 16px;letter-spacing: 4px;font-family: thin;}
-a.a1:hover {color:#000000;}   /* 設定滑鼠游標指在連結位置上的樣式 */
-a.a1:active {color:#FFFFFF;}  /* 設定上點擊過的連結樣式 */
-
-/* 頁面上方超連結樣式 背景白底色 */
-a.a2 {color: #C1A685;text-decoration: none;font-size: 16px;letter-spacing: 4px;font-family: thin;}
-a.a2:hover {color:#000000;}   /* 設定滑鼠游標指在連結位置上的樣式 */
-a.a2:active {color:#C1A685;}  /* 設定上點擊過的連結樣式 */
-
 /*p3的展覽名稱與展覽清單字體*/
-.p3{color: #9C856E;font-size: 16px;letter-spacing: 4px;font-family: thin;}
+.p3{color: #9C856E;font-size: 16px;letter-spacing: 4px;}
 .p3name{color: black;font-size: 16px;letter-spacing: 4px;font: thin;}
 
 /*p5的字體*/
-.p5{color: #8C735E;font-size: 16px;letter-spacing: 4px;font-family: thin;}
+.p5{color: #8C735E;font-size: 16px;letter-spacing: 4px;}
 
 /*p6的字體*/
 .p6{color: #000000;font-size: 17px;letter-spacing: 4px;font: thin;}
 
-/*水平線樣式*/
-.h1{
-	width: 80%;border : 0;height: 1px; 
- 	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)); }
-.h2{border: 0;border-bottom: 1px solid #C1A685;}
-
-/**/
-textarea{
-	width: 500px;
-	height: 200px;
-
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-
-	border: 1px solid #999; 
-}
 /*p5*/
 .game{
 	width: 100px;
