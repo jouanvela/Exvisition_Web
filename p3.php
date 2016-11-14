@@ -33,17 +33,17 @@
 			<div class="row">
 				<div class="col-md-3"></div>
 				<div class="col-md-6">
-					<!-- 放廠商的logo -->
-					<img src="" style="width: 520px; height: 180px;border-width:3px;"><p>(放廠商的logo)</p>
+					<!-- 展場logo -->
+					<img src="./img/member/<?php echo $_SESSION['mid'];?>.png" style="width: 520px; height: 180px;border-width:3px;"><p></p>
 					<!-- 新增展覽 -->
 					<form class="form-inline" role="form">
-					  <div class="form-group">
-					    <div class="input-group">
-					      <label class="sr-only" for="InputExhibition">新增展覽</label>
-					      <input type="text" class="form-control" id="InputExhibition">
-					    </div>
-					  </div>
-					  <button type="submit" class="btn btn-default">+新增展覽</button>
+						<div class="form-group">
+							<div class="input-group">
+								<label class="sr-only" for="InputExhibition">新增展覽</label>
+								<input type="text" class="form-control" id="InputExhibition">
+							</div>
+						</div>
+						<button type="submit" class="btn btn-default">+新增展覽</button>
 					</form>
 					<br><br>
 					<!-- 新增展覽之後，在下方新增區塊 -->
@@ -71,7 +71,6 @@
 				<div class="col-md-3"></div>
 			</div>
 		</div>
-
 
 		<!--JavaScript-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

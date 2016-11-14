@@ -42,9 +42,6 @@
         }
     }
 ?>
-
-
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -63,9 +60,7 @@
 			<div class="row">
 				<div class="col-md-4"></div>
 				<div class="col-md-4">
-                    <br><br><br>
 					<img src="img/logo.png" id="index-logo">
-                    <br><br><br>
 					<!-- 登入帳密 -->
 					<form class="form-horizontal" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
 					  	<div class="form-group">

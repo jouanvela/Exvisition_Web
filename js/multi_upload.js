@@ -1,5 +1,5 @@
 jQuery(document).ready(function($) {
-    //<input multiple accept = "image/jpeg" type="file" id="file"/>
+    //<input multiple accept = "image/png" type="file" id="file"/>
 	document.getElementById('file').addEventListener('change', readURL_multi, false);
 
     //<button id='file_upload'>確認上傳</button>
@@ -14,20 +14,31 @@ jQuery(document).ready(function($) {
                 total++;
         }
 
+        console.log(total);
         //上傳檔案，異步
         var count = 0;
+        var filename = "";
         for(var i = 0; i < multi.length; i++){
+            //console.log(i);
             if(multi[i] != 'removed'){
                 var fd = new FormData();
                 fd.append('file',multi[i]);//伺服器端接收：$_FILES["file"]["tmp_name"]
                 $.ajax({
-                    url: '[中介api]',
+                    url: './upload.php',
                     type: 'POST',
                     data: fd,
                     processData: false,
                     contentType: false,
                     success: function(data){
-                        //console.log('finish a pic');
+                        if(data != false){
+                            if(filename != ""){
+                                filename = filename+","+data;
+                            }
+                            else{
+                                filename = data;
+                            }
+                            console.log(filename);
+                        }
                     },
                     error:function(){
                         console.log("OOPS!");
@@ -35,13 +46,16 @@ jQuery(document).ready(function($) {
                 })
                 .done(function(){
                     count++;
-                    if(count == total)
-                        alert('檔案全數上傳完成');
+                    if(count == total){
+                        $('#filename').val(filename);
+                        //alert('檔案全數上傳完成');
+                        $('#submit').trigger("click");
+                    }
                 });
             }
         }
         if(total == 0)
-            alert('無檔案能夠上傳');
+            $('#submit').trigger("click");
     });
 });
 
@@ -61,7 +75,7 @@ function readURL_multi(input) {
             for (var i = 0; i < data.length; i++) {
                 ia[i] = data.charCodeAt(i);
             };
-            var temp = new Blob([ia], {type:"image/jpeg"});
+            var temp = new Blob([ia], {type:"image/png"});
 
             multi.push(temp);
             seq++;
@@ -79,9 +93,9 @@ function readURL_multi(input) {
             if(multi[i] != 'removed'){
                 var urlCreator = window.URL || window.webkitURL;
                 var imageUrl = urlCreator.createObjectURL(multi[i]);
-                $('.preview').append('<div class="md-3 sm-6 xMom">'
+                $('.preview').append('<div class="col-md-3 col-xs-3">'
                                         +'<div class="cancel" title="移除">&#10006;</div>'
-                                        +'<img class="upload_pics_'+i+'" src="'+imageUrl+'">'
+                                        +'<img class="upload_pics_'+i+'" src="'+imageUrl+'" style="height: 100px;">'
                                     +'</div>');
                 $('.cancel').bind('click', function(event){
                     var seq = $(this).next('img').attr('class');
