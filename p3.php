@@ -19,56 +19,42 @@
 
 		<title>Exvisition</title>
 
+        <link rel="shortcut icon" href="favicon.ico"/>
+        <link rel="bookmark" href="favicon.ico"/>
 		<!-- Bootstrap -->
 		<link href="css/bootstrap.min.css" rel="stylesheet"/>
 		<link href="css/style.css"  rel="stylesheet"/>
-
 	</head>
-	<style type="text/css">
-		td{height:55px;background-color: #9C856E;padding:8px;}
-	</style>
 	<body class="align-center">
 		<div class="container">
 			<?php include("navdark.php");?>
 			<div class="row">
-				<div class="col-md-3"></div>
-				<div class="col-md-6">
+				<div class="col-md-2"></div>
+				<div class="col-md-8">
 					<!-- 展場logo -->
-					<img src="./img/member/<?php echo $_SESSION['mid'];?>.png" style="width: 520px; height: 180px;border-width:3px;"><p></p>
+					<img src="./img/member/<?php echo $_SESSION['mid'];?>.png" id="member-logo"><p></p>
 					<!-- 新增展覽 -->
-					<form class="form-inline" role="form">
-						<div class="form-group">
-							<div class="input-group">
-								<label class="sr-only" for="InputExhibition">新增展覽</label>
-								<input type="text" class="form-control" id="InputExhibition">
-							</div>
-						</div>
-						<button type="submit" class="btn btn-default">+新增展覽</button>
-					</form>
-					<br><br>
-					<!-- 新增展覽之後，在下方新增區塊 -->
-					<div class="row">
-						<div class="col-md-12 col-xs-12">
-							<table>
-								<tr>
-									<!-- 日期 -->
-									<td style="width:200px;" align='left' valign="bottom">
-										<font color="white" face="thin">年/月/日</font>
-									</td>
-									<!-- 展覽名稱 -->
-									<td style="width:300px;letter-spacing: 5px" align='center' valign="middle">
-										<font color="white" face="thin">展覽名稱</font>
-									</td>
-									<!-- 編輯刪除 -->
-									<td style="width:200px;" align='right' valign="middle">
-										<a href=""></a>
-									</td>
-								</tr>
-							</table>
-						</div>
+					<div id="add-exhibition">
+						<a href="" class="button-exvisition">新增展覽</a>
 					</div>
+<?php
+	$SQL = "SELECT * FROM exhibition WHERE mid = '".$_SESSION['mid']."'";
+    $stmt = $dbh->prepare($SQL);
+    $stmt->execute();
+    while ($rs = $stmt->fetch(PDO::FETCH_OBJ))
+    {
+    	echo '<div class="exhibition-box">';
+    	echo 	'<div class="col-md-4 date">'.$rs->eStartTime.'-'.$rs->eEndTime.'</div>';
+    	echo 	'<div class="col-md-6 name">'.$rs->eName.'</div>';
+    	echo 	'<div class="col-md-2 edit">';
+    	echo 		'<a href=""><span class="glyphicon glyphicon-pencil"></span></a>';
+    	echo 		'<a href=""><span class="glyphicon glyphicon-remove"></span></a>';
+    	echo 	'</div>';
+    	echo '</div>';
+    }
+?>
 				</div>
-				<div class="col-md-3"></div>
+				<div class="col-md-2"></div>
 			</div>
 		</div>
 

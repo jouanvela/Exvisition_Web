@@ -1,29 +1,104 @@
-@font-face {
+@font-face{
+  font-family: 'Brandon Grotesque Regular';
+  src: url('../fonts/BRANDON_REG.OTF') format('OpenType');
+}
+@font-face{
   font-family: 'Brandon Grotesque Bold';
   src: url('../fonts/BRANDON_BLD.OTF') format('OpenType');
 }
 
-html, body {
+html, body{
 	height: 100%;
-	font-family:"Brandon Grotesque Bold", "微軟正黑體", "Microsoft JhengHei";
-}
-.align-center {
+	font-family:"Brandon Grotesque Regular", "微軟正黑體", "Microsoft JhengHei";
 	text-align: center;
 }
-.bg-brown {
+
+.bg-brown{
 	background-color:#E4C392;
 }
 
 /***INDEX***/
+#index-logo{
+	margin: 50px;
+	width: 260px;
+}
+/****P2****/
 .text-light{
 	color: #FFFFFF;
 	font-size: 16px;
 	letter-spacing: 5px;
 }
-#index-logo {
+
+/****P3****/
+#member-logo{
+	max-width: 300px;
 	margin: 50px;
-	width: 255px;
-	height: 245px;
+}
+#add-exhibition{
+	margin-bottom: 10px;
+	margin-right: 50px;
+	text-align: right;
+}
+.button-exvisition{
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	  	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+	background-image: none;
+	border: 0px;
+
+	color: #fff;
+	background-color: #BEA274;
+}
+.button-exvisition:hover{
+	color: #fff;
+    background-color: #D2BBA0;
+	text-decoration: none;
+}
+.exhibition-box{
+	width: 700px;
+	height: 50px;
+	margin: 5px;
+	background-color: #9C856E;
+	color: #FFFFFF;
+	font-size: 15px;
+	letter-spacing: 1px;
+	text-align: left;
+}
+.exhibition-box .date{
+	padding-top: 25px;
+	padding-left: 5px;
+	padding-right: 2px;
+}
+.exhibition-box .name{
+	padding-top: 15px;
+	font-size: 18px;
+}
+.exhibition-box .edit{
+	padding-top: 15px;
+	text-align: right;
+}
+.exhibition-box .edit a{
+	color: #FFFFFF;
+}
+
+.item-list{
+	border-width: 0.8px;
+	border-color: black;
+	border-style:solid;
+	padding: 30px 16px;
 }
 
 
@@ -35,46 +110,44 @@ nav {
 	margin-left: 100px;
 	text-align: right;
 }
-.nav-text-light, .nav-text-dark {
+.nav-bar{
+	color:#886600;
+}
+.nav-text-light,
+.nav-text-dark {
 	text-decoration: none;
 	font-size: 16px;
 	letter-spacing: 4px;
 }
-.nav-text-light:hover, .nav-text-dark:hover {
+.nav-text-light:hover,
+.nav-text-dark:hover {
 	color:#000000;
 	text-decoration: none;
 }
-.nav-text-light:active, .nav-text-dark:active {
+.nav-text-light:active,
+.nav-text-dark:active {
 	text-decoration: none;
 }
-.nav-bar{
-	color:#886600;
-}
-.nav-text-light, .nav-text-light:active{
+.nav-text-light,
+.nav-text-light:active{
 	color: #FFFFFF;
+}
+.nav-text-dark,
+.nav-text-dark:active {
+	color: #C1A685;
 }
 hr.light{
 	border: 0;
 	border-top: 1px solid #886600;
 }
-.nav-text-dark, .nav-text-dark:active {
-	color: #C1A685;
-}
 hr.dark{
 	border: 0;
-	height: 1px;
- 	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+	border-top: 1px solid #886600;
+/*	height: 1px;
+ 	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));*/
 }
 
 
-
-
-
-
-
-/*p3的展覽名稱與展覽清單字體*/
-.p3{color: #9C856E;font-size: 16px;letter-spacing: 4px;}
-.p3name{color: black;font-size: 16px;letter-spacing: 4px;font: thin;}
 
 /*p5的字體*/
 .p5{color: #8C735E;font-size: 16px;letter-spacing: 4px;}
