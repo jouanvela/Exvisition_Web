@@ -93,14 +93,36 @@ html, body{
 .exhibition-box .edit a{
 	color: #FFFFFF;
 }
-
-.item-list{
-	border-width: 0.8px;
-	border-color: black;
-	border-style:solid;
-	padding: 30px 16px;
+#edit-control{
+	margin-top: 20px;
 }
 
+.title{
+	color: #8C735E;
+	font-size: 20px;
+	font-weight: 600;
+}
+.item-list-box{
+	border-width: 0.8px;
+	border-color: #8C735E;
+	border-style:solid;
+	padding: 30px 16px;
+	margin-bottom: 100px;
+}
+/**/
+.item-form {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 16px;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 0px;
+  border-bottom: : 1px solid #000;
+}
+/**/
 
 
 /***NAVBAR***/

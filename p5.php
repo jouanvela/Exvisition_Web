@@ -2,9 +2,7 @@
     include("db.php");
     session_start();
     if(!isset($_SESSION['mid']))
-    {
         header('location:index.php');
-    }
     else if(isset($_GET['log']) && ($_GET['log']=='out')){
         session_destroy();
         header('location:index.php');
@@ -28,7 +26,7 @@
 	</style>
 	<body>
 		<div class="container">
-			<?php include("navdark.php");?>
+			<?php include("_navdark.php");?>
 			<div class="row">
 				<div class="col-md-3"></div>
 				<div class="col-md-6 col-xs-12">

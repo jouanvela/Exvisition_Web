@@ -2,9 +2,7 @@
     include("db.php");
     session_start();
     if(!isset($_SESSION['mid']))
-    {
         header('location:index.php');
-    }
     else if(isset($_GET['log']) && ($_GET['log']=='out')){
         session_destroy();
         header('location:index.php');
@@ -55,7 +53,7 @@
 	</head>
 	<body class="bg-brown">
 		<div class="container">
-			<?php include("navlight.php");?>
+			<?php include("_navlight.php");?>
 			<div class="row">
 				<div class="col-md-2"></div>
 				<div class="col-md-8 col-xs-10">

@@ -24,7 +24,7 @@ jQuery(document).ready(function($) {
                 var fd = new FormData();
                 fd.append('file',multi[i]);//伺服器端接收：$_FILES["file"]["tmp_name"]
                 $.ajax({
-                    url: './upload.php',
+                    url: './_upload.php',
                     type: 'POST',
                     data: fd,
                     processData: false,

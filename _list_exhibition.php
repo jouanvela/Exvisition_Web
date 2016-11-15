@@ -2,9 +2,7 @@
     include("db.php");
     session_start();
     if(!isset($_SESSION['mid']))
-    {
         header('location:index.php');
-    }
     else if(isset($_GET['log']) && ($_GET['log']=='out')){
         session_destroy();
         header('location:index.php');
@@ -27,7 +25,7 @@
 	</head>
 	<body class="align-center">
 		<div class="container">
-			<?php include("navdark.php");?>
+			<?php include("_navdark.php");?>
 			<div class="row">
 				<div class="col-md-2"></div>
 				<div class="col-md-8">
@@ -35,20 +33,19 @@
 					<img src="./img/member/<?php echo $_SESSION['mid'];?>.png" id="member-logo"><p></p>
 					<!-- 新增展覽 -->
 					<div id="add-exhibition">
-						<a href="" class="button-exvisition">新增展覽</a>
+						<a href="_edit_exhibition.php" class="button-exvisition">新增展覽</a>
 					</div>
 <?php
 	$SQL = "SELECT * FROM exhibition WHERE mid = '".$_SESSION['mid']."'";
     $stmt = $dbh->prepare($SQL);
     $stmt->execute();
-    while ($rs = $stmt->fetch(PDO::FETCH_OBJ))
-    {
+    while ($rs = $stmt->fetch(PDO::FETCH_OBJ)){
     	echo '<div class="exhibition-box">';
     	echo 	'<div class="col-md-4 date">'.$rs->eStartTime.'-'.$rs->eEndTime.'</div>';
     	echo 	'<div class="col-md-6 name">'.$rs->eName.'</div>';
     	echo 	'<div class="col-md-2 edit">';
-    	echo 		'<a href=""><span class="glyphicon glyphicon-pencil"></span></a>';
-    	echo 		'<a href=""><span class="glyphicon glyphicon-remove"></span></a>';
+    	echo 		'<a href="_edit_exhibition.php?eid='.$rs->eid.'"><span class="glyphicon glyphicon-pencil"></span></a>';
+    	echo 		'<a href="_edit_exhibition.php?eid='.$rs->eid.'"><span class="glyphicon glyphicon-remove"></span></a>';
     	echo 	'</div>';
     	echo '</div>';
     }

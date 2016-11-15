@@ -2,11 +2,8 @@
     include("db.php");
     session_start();
     if(isset($_SESSION['mid']))
-    {
-        header('location:p2.php');
-    }
-    else if(isset($_POST['account']))
-    {
+        header('location:_list_exhibition.php');
+    else if(isset($_POST['account'])){
         $account  = $_POST['account'];
         $password   = $_POST['password'];
 
@@ -17,28 +14,25 @@
         //password_hash
         $pwdcheck = password_verify($password, $rs->pwd);
 
-        if( $rs == NULL )
-        {
+        if( $rs == NULL ){
             echo "
             <script type=\"text/javascript\">
             window.alert(\"帳號錯誤\");
             </script>
             ";
         }
-        else if($pwdcheck != 1)
-        {
+        else if($pwdcheck != 1){
             echo "
             <script type=\"text/javascript\">
             window.alert(\"密碼錯誤\");
             </script>
             ";
         }
-        else if($pwdcheck)
-        {
+        else if($pwdcheck){
             //------
             $_SESSION['mid']   = $rs->mid;
             $_SESSION['mName'] = $rs->mName;
-            header('location:p2.php');
+            header('location:_list_exhibition.php');
         }
     }
 ?>
