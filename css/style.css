@@ -17,28 +17,6 @@ html, body{
 	background-color:#E4C392;
 }
 
-/***INDEX***/
-#index-logo{
-	margin: 50px;
-	width: 260px;
-}
-/****P2****/
-.text-light{
-	color: #FFFFFF;
-	font-size: 16px;
-	letter-spacing: 5px;
-}
-
-/****P3****/
-#member-logo{
-	max-width: 300px;
-	margin: 50px;
-}
-#add-exhibition{
-	margin-bottom: 10px;
-	margin-right: 50px;
-	text-align: right;
-}
 .button-exvisition{
 	display: inline-block;
 	padding: 6px 12px;
@@ -67,6 +45,31 @@ html, body{
     background-color: #D2BBA0;
 	text-decoration: none;
 }
+
+
+
+/*********INDEX*********/
+#index-logo{
+	margin: 50px;
+	width: 260px;
+}
+/*****EDIT-PROFILE******/
+.text-light{
+	color: #FFFFFF;
+	font-size: 16px;
+	letter-spacing: 5px;
+}
+
+/****LIST-EXHIBITION****/
+#member-logo{
+	max-width: 300px;
+	margin: 50px;
+}
+#add-exhibition{
+	margin-bottom: 10px;
+	margin-right: 50px;
+	text-align: right;
+}
 .exhibition-box{
 	width: 700px;
 	height: 50px;
@@ -87,17 +90,19 @@ html, body{
 	font-size: 18px;
 }
 .exhibition-box .edit{
-	padding-top: 15px;
+	padding-top: 17px;
 	text-align: right;
 }
 .exhibition-box .edit a{
+	padding:3px;
 	color: #FFFFFF;
 }
+/****EDIT-EXHIBITION****/
 #edit-control{
 	margin-top: 20px;
+	padding-right: 15px
 }
-
-.title{
+.exhibition-title{
 	color: #8C735E;
 	font-size: 20px;
 	font-weight: 600;
@@ -109,21 +114,37 @@ html, body{
 	padding: 30px 16px;
 	margin-bottom: 100px;
 }
-/**/
-.item-form {
-  display: block;
-  width: 100%;
-  height: 34px;
-  padding: 6px 12px;
-  font-size: 16px;
-  color: #555;
-  background-color: #fff;
-  background-image: none;
-  border: 0px;
-  border-bottom: : 1px solid #000;
+.item-box{
+	width: 700px;
+	height: 50px;
+	margin: 5px;
+	background-color: #9C856E;
+	color: #FFFFFF;
+	letter-spacing: 1px;
+	text-align: center;
 }
-/**/
-
+.item-box h4{
+	color: #8C735E;
+}
+.item-box .name{
+	padding-top: 15px;
+	font-size: 18px;
+}
+.item-box .edit{
+	padding-top: 17px;
+	padding-right: 10px;
+	padding-left: 0px;
+	text-align: right;
+}
+.item-box .edit a{
+	padding:3px;
+	color: #FFFFFF;
+}
+.item-title{
+	color: #8C735E;
+	font-size: 16px;
+	font-weight: 600;
+}
 
 /***NAVBAR***/
 nav {

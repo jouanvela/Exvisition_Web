@@ -13,7 +13,6 @@
 			if(!is_dir("./img/member/")){
 				mkdir("./img/member/", 0777,true);
 				chmod('/img/member/', 0777);
-
 			}
 			move_uploaded_file($_FILES["file"]["tmp_name"],"./img/member/".$temp.".png");//移動檔案
 			chmod("./img/member/".$temp.".png", 0777);

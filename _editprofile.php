@@ -9,23 +9,30 @@
     }
 
 	if(isset($_POST['submit'])) {
+		if($_FILES["file"]["error"] == 0){
+			$ext = pathinfo($_FILES["file"]["name"], PATHINFO_EXTENSION);
+			move_uploaded_file($_FILES["file"]["tmp_name"],'./img/member/'.$_SESSION['mid'].'.'.$ext);
+		}
+		else if($_FILES["file"]["error"] > 0 && $_FILES["file"]["error"] != 4){
+			echo "
+		    <script type=\"text/javascript\">
+		    window.alert(\"Upload Error: ".$_FILES["file"]["error"]."\");
+		    window.location.assign(\"_editprofile.php\");
+		    </script>
+		    ";
+		}
 		$SQL = "UPDATE member SET mName=:mName, mDescription=:description WHERE mid=:mid";
 		$stmt = $dbh->prepare($SQL);
 		$stmt->bindValue(':mid', $_SESSION['mid']);
 		$stmt->bindValue(':mName', $_POST['mName']);
 		$stmt->bindValue(':description', $_POST['description']);
 		$e = $stmt->execute();
-
 		if($e){
-			$temp = preg_split("/[,]+/", $_POST['filename']);
-		    foreach ($temp as $key => $value) {
-		    	rename('./img/member/'.$value.'.png', './img/member/'.$_SESSION['mid'].'.png');
-		    }
 		    $_SESSION['mName'] = $_POST['mName'];
 		    echo "
 		    <script type=\"text/javascript\">
 		    window.alert(\"更新成功\");
-		    window.location.assign(\"p3.php\");
+		    window.location.assign(\"_editprofile.php\");
 		    </script>
 		    ";
 		}
@@ -43,7 +50,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title>Exvisition</title>
+		<title><?php echo $title; ?></title>
 
         <link rel="shortcut icon" href="favicon.ico"/>
         <link rel="bookmark" href="favicon.ico"/>
@@ -72,11 +79,7 @@
 								<div class="text-light">LOGO</div>
 							</label>
 							<div class="col-sm-10">
-							    <input accept="image/png" type="file" id="file"/>
-							    <div class="preview">
-							        <br class="clearboth" style="clear:both;">
-							    </div>
-							    <input type="text" id="filename" name="filename" style="display:none;"/>
+								<input accept="image/*" type="file" id="file" name="file"/>
 							</div>
 						</div>
 						<div class="form-group">
@@ -87,8 +90,7 @@
 								<textarea class="form-control" rows="15" id="description" name="description"><?php echo $rs->mDescription; ?></textarea>
 							</div>
 						</div>
-			            <button id="file_upload" class="btn btn-default">送出</button>
-			            <button type="submit" id="submit" name="submit" style="display:none;" />
+			            <button type="submit" id="submit" name="submit" class="btn btn-default">送出</button>
 					</form>
 				</div>
 				<div class="col-md-2"></div>
@@ -98,6 +100,5 @@
 		<!--JavaScript-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script src="js/multi_upload.js"></script>
 	</body>
 </html>

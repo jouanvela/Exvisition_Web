@@ -15,7 +15,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title>Exvisition</title>
+		<title><?php echo $title; ?></title>
 
 		<!-- Bootstrap -->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -217,6 +217,5 @@
 		<!--JavaScript-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script src="game.js"></script>
 	</body>
 </html>

@@ -15,7 +15,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title>Exvisition</title>
+		<title><?php echo $title; ?></title>
 
         <link rel="shortcut icon" href="favicon.ico"/>
         <link rel="bookmark" href="favicon.ico"/>
@@ -30,11 +30,12 @@
 				<div class="col-md-2"></div>
 				<div class="col-md-8">
 					<!-- 展場logo -->
-					<img src="./img/member/<?php echo $_SESSION['mid'];?>.png" id="member-logo"><p></p>
+					<img src="./img/member/<?php echo $_SESSION['mid'];?>.png" id="member-logo">
 					<!-- 新增展覽 -->
 					<div id="add-exhibition">
 						<a href="_edit_exhibition.php" class="button-exvisition">新增展覽</a>
 					</div>
+					<div style="margin-bottom: 50px;">
 <?php
 	$SQL = "SELECT * FROM exhibition WHERE mid = '".$_SESSION['mid']."'";
     $stmt = $dbh->prepare($SQL);
@@ -45,11 +46,12 @@
     	echo 	'<div class="col-md-6 name">'.$rs->eName.'</div>';
     	echo 	'<div class="col-md-2 edit">';
     	echo 		'<a href="_edit_exhibition.php?eid='.$rs->eid.'"><span class="glyphicon glyphicon-pencil"></span></a>';
-    	echo 		'<a href="_edit_exhibition.php?eid='.$rs->eid.'"><span class="glyphicon glyphicon-remove"></span></a>';
+    	echo 		'<a href="_edit_exhibition.php?eid='.$rs->eid.'"><span class="glyphicon glyphicon-trash"></span></a>';
     	echo 	'</div>';
     	echo '</div>';
     }
 ?>
+					</div>
 				</div>
 				<div class="col-md-2"></div>
 			</div>

@@ -43,7 +43,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title>Exvisition</title>
+		<title><?php echo $title; ?></title>
 
         <link rel="shortcut icon" href="favicon.ico"/>
         <link rel="bookmark" href="favicon.ico"/>

@@ -33,6 +33,7 @@ jQuery(document).ready(function($) {
                         if(data != false){
                             if(filename != ""){
                                 filename = filename+","+data;
+                                console.log(filename);
                             }
                             else{
                                 filename = data;
@@ -49,7 +50,7 @@ jQuery(document).ready(function($) {
                     if(count == total){
                         $('#filename').val(filename);
                         //alert('檔案全數上傳完成');
-                        $('#submit').trigger("click");
+                        //$('#submit').trigger("click");
                     }
                 });
             }
