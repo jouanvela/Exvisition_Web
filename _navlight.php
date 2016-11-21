@@ -6,5 +6,5 @@
 	<a href="#" class="nav-text-light">聯絡我們</a>
 	<font class="nav-bar">|</font>
 	<a href="?log=out" class="nav-text-light">登出</a>
-	<hr class="light">
+	<hr>
 </nav>

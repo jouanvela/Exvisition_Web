@@ -13,10 +13,6 @@ html, body{
 	text-align: center;
 }
 
-.bg-brown{
-	background-color:#E4C392;
-}
-
 .button-exvisition{
 	display: inline-block;
 	padding: 6px 12px;
@@ -40,7 +36,8 @@ html, body{
 	color: #fff;
 	background-color: #BEA274;
 }
-.button-exvisition:hover{
+.button-exvisition:hover,
+.button-exvisition:active{
 	color: #fff;
     background-color: #D2BBA0;
 	text-decoration: none;
@@ -49,11 +46,68 @@ html, body{
 
 
 /*********INDEX*********/
+#bg-index{
+	background-image: url("../img/bg1.jpg");
+	   -moz-background-size:cover;
+	-webkit-background-size:cover;
+         -o-background-size:cover;
+	background-size:cover;
+}
+
+.index-input{
+	border: 0;
+	background-color:rgba(255, 255, 255, 0.3)
+}
+.index-input::-moz-placeholder {
+  color: #fff;
+  opacity: 1;
+}
+.index-input:-ms-input-placeholder {
+  color: #fff;
+}
+.index-input::-webkit-input-placeholder {
+  color: #fff;
+}
+
+#button-index{
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	  	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+	background-image: none;
+	border: 0px;
+
+	color: #fff;
+	background-color:rgba(255, 255, 255, 0.2);
+}
+#button-index:hover,
+#button-index:active{
+	color: black;
+    background-color:rgba(255, 255, 255, 0.5);
+	text-decoration: none;
+}
+
 #index-logo{
-	margin: 50px;
-	width: 260px;
+	margin-top: 100px;
+	margin-bottom: 70px;
+	width: 200px;
 }
 /*****EDIT-PROFILE******/
+.bg-brown{
+	background-color:#E4C392;
+}
 .text-light{
 	color: #FFFFFF;
 	font-size: 16px;
@@ -87,7 +141,7 @@ html, body{
 }
 .exhibition-box .name{
 	padding-top: 15px;
-	font-size: 18px;
+	font-size: 16px;
 }
 .exhibition-box .edit{
 	padding-top: 17px;
@@ -98,7 +152,7 @@ html, body{
 	color: #FFFFFF;
 }
 /****EDIT-EXHIBITION****/
-#edit-control{
+.edit-control{
 	margin-top: 20px;
 	padding-right: 15px
 }
@@ -106,6 +160,10 @@ html, body{
 	color: #8C735E;
 	font-size: 20px;
 	font-weight: 600;
+}
+#item-list-title{
+	margin-top: 10px;
+	margin-bottom: 0px;
 }
 .item-list-box{
 	border-width: 0.8px;
@@ -128,7 +186,7 @@ html, body{
 }
 .item-box .name{
 	padding-top: 15px;
-	font-size: 18px;
+	font-size: 15px;
 }
 .item-box .edit{
 	padding-top: 17px;
@@ -145,7 +203,9 @@ html, body{
 	font-size: 16px;
 	font-weight: 600;
 }
-
+.item-text{
+	color: #000;
+}
 /***NAVBAR***/
 nav {
 	margin-top: 50px;
@@ -155,6 +215,8 @@ nav {
 }
 .nav-bar{
 	color:#886600;
+	padding-right: 4px;
+	padding-left: 1px;
 }
 .nav-text-light,
 .nav-text-dark {
@@ -162,78 +224,33 @@ nav {
 	font-size: 16px;
 	letter-spacing: 4px;
 }
+.nav-text-light:link,
+.nav-text-light:visited{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.nav-text-dark:link,
+.nav-text-dark:visited {
+	color: #C1A685;
+	text-decoration: none;
+}
 .nav-text-light:hover,
 .nav-text-dark:hover {
 	color:#000000;
 	text-decoration: none;
 }
-.nav-text-light:active,
-.nav-text-dark:active {
-	text-decoration: none;
-}
 .nav-text-light,
 .nav-text-light:active{
 	color: #FFFFFF;
+	text-decoration: none;
 }
 .nav-text-dark,
 .nav-text-dark:active {
 	color: #C1A685;
+	text-decoration: none;
 }
-hr.light{
+hr{
+	margin-top: 15px;
 	border: 0;
 	border-top: 1px solid #886600;
-}
-hr.dark{
-	border: 0;
-	border-top: 1px solid #886600;
-/*	height: 1px;
- 	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));*/
-}
-
-
-
-/*p5的字體*/
-.p5{color: #8C735E;font-size: 16px;letter-spacing: 4px;}
-
-/*p6的字體*/
-.p6{color: #000000;font-size: 17px;letter-spacing: 4px;font: thin;}
-
-/*p5*/
-.game{
-	width: 100px;
-	height: 40px;
-	background-color: #BEA274;
-	text-align: center;
-	letter-spacing: 4px;
-	color: white;
-	border-radius: 4px;
-	border: none;
-	transition: all 0.5s;
-	cursor: pointer;
-	padding: 10px;
-}
-.game span{
-	cursor: pointer;
-	display: inline-block;
-	position: relative;
-	transition: 0.5s;
-}
-.game span:after{
-	content: '+';
-	position: absolute;
-	opacity: 0;
-	top: 0;
-	right: -10px;
-	transition: 0.5s;
-}
-.game span:hover{
-	padding-right: 15px;
-}
-.game:hover span:after{
-	opacity: 1;
-	right: 0;
-}
-.gamebtn{
-	background-color: white;
-	border: 0px white none;
 }

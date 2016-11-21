@@ -7,6 +7,19 @@
         session_destroy();
         header('location:index.php');
     }
+    else if(isset($_GET['delete'])){
+		$SQL = "SELECT * FROM exhibition WHERE eid = ".$_GET['delete']." AND mid =".$_SESSION['mid'];
+	    $stmt = $dbh->prepare($SQL);
+	    $stmt->execute();
+	    $rs = $stmt->fetch(PDO::FETCH_OBJ);
+	    if(!empty($rs->eid)){
+		    $SQL = "DELETE FROM exhibition WHERE eid ='".$_GET['delete']."'";
+		    $stmt = $dbh->prepare($SQL);
+		    $stmt->execute();
+   	}
+   	else
+   		header('location:_list_exhibition.php');
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -33,22 +46,25 @@
 					<img src="./img/member/<?php echo $_SESSION['mid'];?>.png" id="member-logo">
 					<!-- 新增展覽 -->
 					<div id="add-exhibition">
-						<a href="_edit_exhibition.php" class="button-exvisition">新增展覽</a>
+						<a href="_add_exhibition.php" class="button-exvisition">新增展覽</a>
 					</div>
 					<div style="margin-bottom: 50px;">
 <?php
-	$SQL = "SELECT * FROM exhibition WHERE mid = '".$_SESSION['mid']."'";
+	$SQL = "SELECT * FROM exhibition WHERE mid = '".$_SESSION['mid']."' ORDER BY eEndTime ASC";
     $stmt = $dbh->prepare($SQL);
     $stmt->execute();
     while ($rs = $stmt->fetch(PDO::FETCH_OBJ)){
-    	echo '<div class="exhibition-box">';
-    	echo 	'<div class="col-md-4 date">'.$rs->eStartTime.'-'.$rs->eEndTime.'</div>';
-    	echo 	'<div class="col-md-6 name">'.$rs->eName.'</div>';
-    	echo 	'<div class="col-md-2 edit">';
-    	echo 		'<a href="_edit_exhibition.php?eid='.$rs->eid.'"><span class="glyphicon glyphicon-pencil"></span></a>';
-    	echo 		'<a href="_edit_exhibition.php?eid='.$rs->eid.'"><span class="glyphicon glyphicon-trash"></span></a>';
-    	echo 	'</div>';
-    	echo '</div>';
+    	echo '
+    		<div class="exhibition-box">
+				<div class="col-md-4 date">'.$rs->eStartTime.'-'.$rs->eEndTime.'</div>
+    	 		<div class="col-md-6 name">'.$rs->eName.'</div>
+    	 		<div class="col-md-2 edit">
+	    	 		<a href="_edit_exhibition.php?eid='.$rs->eid.'"><span class="glyphicon glyphicon-pencil"></span></a>
+    	 			<a href="" class="fackDelete"><span class="glyphicon glyphicon glyphicon-trash"></span></a>
+		 			<a href="?delete='.$rs->eid.'" style="display:none;"></a>
+    	 		</div>
+    	 	</div>
+    	';
     }
 ?>
 					</div>
@@ -60,5 +76,6 @@
 		<!--JavaScript-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script src="js/delete.js"></script>
 	</body>
 </html>

@@ -79,7 +79,7 @@
 								<div class="text-light">LOGO</div>
 							</label>
 							<div class="col-sm-10">
-								<input accept="image/*" type="file" id="file" name="file"/>
+								<input accept="image/png" type="file" id="file" name="file"/>
 							</div>
 						</div>
 						<div class="form-group">

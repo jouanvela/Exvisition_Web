@@ -7,13 +7,11 @@
         $account  = $_POST['account'];
         $password   = $_POST['password'];
 
-        $SQL = "SELECT * FROM member WHERE mid = '".$account."'";
-        $stmt = $dbh->prepare("$SQL");
+        $SQL = "SELECT * FROM member WHERE account = :account";
+        $stmt = $dbh->prepare($SQL);
+        $stmt->bindValue(':account', $account);
         $stmt->execute();
         $rs = $stmt->fetch(PDO::FETCH_OBJ);
-        //password_hash
-        $pwdcheck = password_verify($password, $rs->pwd);
-
         if( $rs == NULL ){
             echo "
             <script type=\"text/javascript\">
@@ -21,18 +19,20 @@
             </script>
             ";
         }
-        else if($pwdcheck != 1){
-            echo "
-            <script type=\"text/javascript\">
-            window.alert(\"密碼錯誤\");
-            </script>
-            ";
-        }
-        else if($pwdcheck){
-            //------
-            $_SESSION['mid']   = $rs->mid;
-            $_SESSION['mName'] = $rs->mName;
-            header('location:_list_exhibition.php');
+        else{
+            $pwdcheck = password_verify($password, $rs->pwd);
+            if($pwdcheck != 1){
+                echo "
+                <script type=\"text/javascript\">
+                window.alert(\"密碼錯誤\");
+                </script>
+                ";
+            }
+            else if($pwdcheck){
+                $_SESSION['mid']   = $rs->mid;
+                $_SESSION['mName'] = $rs->mName;
+                header('location:_editprofile.php');
+            }
         }
     }
 ?>
@@ -51,7 +51,7 @@
 		<link href="css/bootstrap.min.css" rel="stylesheet"/>
 		<link href="css/style.css"  rel="stylesheet"/>
 	</head>
-	<body class="bg-brown">
+	<body id="bg-index">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4"></div>
@@ -60,14 +60,18 @@
 					<!-- 登入帳密 -->
 					<form class="form-horizontal" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
 					  	<div class="form-group">
-							<input type="text" class="form-control" name="account" id="account" placeholder="帳號">
-					  	</div>
+                            <div class="col-sm-10 col-sm-offset-1 item-text">
+							    <input type="text" class="form-control index-input" name="account" id="account" placeholder="帳號">
+					  	    </div>
+                        </div>
 					  	<div class="form-group">
-					      	<input type="password" class="form-control" name="password" id="password" placeholder="密碼">
-					  	</div>
+                            <div class="col-sm-10 col-sm-offset-1 item-text">
+					      	    <input type="password" class="form-control index-input" name="password" id="password" placeholder="密碼">
+					  	    </div>
+                        </div>
 						<div class="form-group">
                             <br>
-						    <button type="submit" class="btn btn-default" name="submit">登入</button>
+						    <button type="submit" id="button-index" name="submit">登入</button>
 						</div>
 					</form>
 				</div>
