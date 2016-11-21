@@ -36,6 +36,11 @@ html, body{
 	color: #fff;
 	background-color: #BEA274;
 }
+.button-exvisition:link,
+.button-exvisition:visited {
+	color: #BEA274;
+	text-decoration: none;
+}
 .button-exvisition:hover,
 .button-exvisition:active{
 	color: #fff;
@@ -47,26 +52,34 @@ html, body{
 
 /*********INDEX*********/
 #bg-index{
-	background-image: url("../img/bg1.jpg");
+	background-image: url("../img/bg1.png");
 	   -moz-background-size:cover;
 	-webkit-background-size:cover;
          -o-background-size:cover;
 	background-size:cover;
 }
-
+#bg-index-s{
+	margin-top: 3%;
+	height:600px;
+	background-image: url("../img/bg2.png");
+	   -moz-background-size:100% 100%;
+	-webkit-background-size:100% 100%;
+         -o-background-size:100% 100%;
+	background-size:100% 100%;
+}
 .index-input{
 	border: 0;
-	background-color:rgba(255, 255, 255, 0.3)
+	background-color:rgba(255, 255, 255, 0.5)
 }
 .index-input::-moz-placeholder {
-  color: #fff;
+  color: #C7AA74;
   opacity: 1;
 }
 .index-input:-ms-input-placeholder {
-  color: #fff;
+  color: #C7AA74;
 }
 .index-input::-webkit-input-placeholder {
-  color: #fff;
+  color: #C7AA74;
 }
 
 #button-index{
@@ -89,13 +102,14 @@ html, body{
 	background-image: none;
 	border: 0px;
 
-	color: #fff;
-	background-color:rgba(255, 255, 255, 0.2);
+	color: #C7AA74;
+	font-size: bold;
+	background-color:rgba(255, 255, 255, 0.5);
 }
 #button-index:hover,
 #button-index:active{
 	color: black;
-    background-color:rgba(255, 255, 255, 0.5);
+    background-color:rgba(255, 255, 255, 0.7);
 	text-decoration: none;
 }
 

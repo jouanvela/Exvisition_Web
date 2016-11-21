@@ -53,10 +53,10 @@
 	</head>
 	<body id="bg-index">
 		<div class="container">
-			<div class="row">
+			<div class="row" id="bg-index-s">
 				<div class="col-md-4"></div>
 				<div class="col-md-4">
-					<img src="img/logo.png" id="index-logo">
+					<img src="img/index-logo.png" id="index-logo">
 					<!-- 登入帳密 -->
 					<form class="form-horizontal" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
 					  	<div class="form-group">

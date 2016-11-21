@@ -104,7 +104,7 @@
 								<textarea class="form-control" rows="15" id="description" name="description"><?php echo $rs->mDescription; ?></textarea>
 							</div>
 						</div>
-			            <button type="submit" id="submit" name="submit" class="btn btn-default">送出</button>
+			            <button type="submit" id="submit" name="submit" class="button-exvisition">送出</button>
 					</form>
 				</div>
 				<div class="col-md-2"></div>

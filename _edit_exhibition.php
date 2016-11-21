@@ -237,6 +237,8 @@
 
 		<title><?php echo $title; ?></title>
 
+        <link rel="shortcut icon" href="favicon.ico"/>
+        <link rel="bookmark" href="favicon.ico"/>
 		<!-- Bootstrap -->
 		<link href="css/bootstrap.min.css" rel="stylesheet"/>
 		<link href="css/style.css" rel="stylesheet"/>
