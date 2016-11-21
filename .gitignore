@@ -1,6 +1,6 @@
 db.php
 pwdhash.php
-img\member\*.png
 *.png
 *.jpg
-item/2/audio.mp3
+*.mp3
+*.mp4
