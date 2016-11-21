@@ -9,9 +9,37 @@
     }
 
 	if(isset($_POST['submit'])) {
+		$dir = "./img/member/";
+		if(!is_dir($dir)){
+			mkdir($dir, 0777, true);
+			chmod($dir, 0777);
+		}
 		if($_FILES["file"]["error"] == 0){
 			$ext = pathinfo($_FILES["file"]["name"], PATHINFO_EXTENSION);
-			move_uploaded_file($_FILES["file"]["tmp_name"],'./img/member/'.$_SESSION['mid'].'.'.$ext);
+			if(!move_uploaded_file($_FILES["file"]["tmp_name"], $dir.$_SESSION['mid'].'.'.$ext)){
+			    echo "
+			    <script type=\"text/javascript\">
+			    window.alert(\"Upload Fail\");
+			    </script>
+			    ";
+			}
+			else{
+				$SQL = "UPDATE member SET mName=:mName, mDescription=:description WHERE mid=:mid";
+				$stmt = $dbh->prepare($SQL);
+				$stmt->bindValue(':mid', $_SESSION['mid']);
+				$stmt->bindValue(':mName', $_POST['mName']);
+				$stmt->bindValue(':description', $_POST['description']);
+				$e = $stmt->execute();
+				if($e){
+				    $_SESSION['mName'] = $_POST['mName'];
+				    echo "
+				    <script type=\"text/javascript\">
+				    window.alert(\"更新成功\");
+				    window.location.assign(\"_list_exhibition.php\");
+				    </script>
+				    ";
+				}
+			}
 		}
 		else if($_FILES["file"]["error"] > 0 && $_FILES["file"]["error"] != 4){
 			echo "
@@ -21,21 +49,7 @@
 		    </script>
 		    ";
 		}
-		$SQL = "UPDATE member SET mName=:mName, mDescription=:description WHERE mid=:mid";
-		$stmt = $dbh->prepare($SQL);
-		$stmt->bindValue(':mid', $_SESSION['mid']);
-		$stmt->bindValue(':mName', $_POST['mName']);
-		$stmt->bindValue(':description', $_POST['description']);
-		$e = $stmt->execute();
-		if($e){
-		    $_SESSION['mName'] = $_POST['mName'];
-		    echo "
-		    <script type=\"text/javascript\">
-		    window.alert(\"更新成功\");
-		    window.location.assign(\"_editprofile.php\");
-		    </script>
-		    ";
-		}
+
 	}
 
 	$SQL = "SELECT * FROM member WHERE mid = '".$_SESSION['mid']."'";
